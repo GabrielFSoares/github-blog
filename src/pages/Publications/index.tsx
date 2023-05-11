@@ -1,5 +1,11 @@
+import { Header } from '../../components/Header'
 import { PublicationsContainer } from './styles'
 
 export function Publications() {
-  return <PublicationsContainer></PublicationsContainer>
+  return (
+    <>
+      <Header />
+      <PublicationsContainer></PublicationsContainer>
+    </>
+  )
 }
