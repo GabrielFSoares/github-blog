@@ -20,11 +20,13 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         color: ${(props) => props.theme['base-title']};
+		font-size: 1.5rem;
         font-weight: 700;
     }
 
     h2 {
         color: ${(props) => props.theme['base-subtitle']};
+		font-size: 1.125rem;
         font-weight: 700;
     }
 `
