@@ -12,6 +12,7 @@ import {
   faUserGroup,
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
+import { SearchForm } from './components/SearchForm'
 
 export function Publications() {
   return (
@@ -49,6 +50,8 @@ export function Publications() {
             </footer>
           </PublicationsHeaderContent>
         </PublicationsHeaderContainer>
+
+        <SearchForm />
       </PublicationsContainer>
     </>
   )
