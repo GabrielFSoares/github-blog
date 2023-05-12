@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const PublicationsContainer = styled.div`
-  header {
+  & > header {
     background-color: ${(props) => props.theme['base-profile']};
 
     border-radius: 10px;
