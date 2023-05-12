@@ -1,20 +1,17 @@
 import { styled } from 'styled-components'
 
 export const PublicationsContainer = styled.div`
-  width: 54rem;
-  margin: 0 auto;
-`
+  header {
+    background-color: ${(props) => props.theme['base-profile']};
 
-export const PublicationsHeaderContainer = styled.header`
-  background-color: ${(props) => props.theme['base-profile']};
+    border-radius: 10px;
+    margin-top: -5.5rem;
+    padding: 2rem 2rem 2rem 2.5rem;
 
-  border-radius: 10px;
-  margin-top: -5.5rem;
-  padding: 2rem 2rem 2rem 2.5rem;
-
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 `
 
 export const PublicationsHeaderContent = styled.div`
