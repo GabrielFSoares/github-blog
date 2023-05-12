@@ -5,16 +5,30 @@ export const PublicationsListContainer = styled.div`
   grid-template-columns: 26rem 26rem;
   gap: 2rem;
   margin-top: 3rem;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme['base-text']};
+  }
 `
 
 export const PublicationCard = styled.div`
   background-color: ${(props) => props.theme['base-post']};
+  border: 2px solid ${(props) => props.theme['base-post']};
   border-radius: 10px;
   padding: 2rem;
 
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+
+  cursor: pointer;
+
+  transition: border-color 0.4s;
+
+  &:hover {
+    border: 2px solid ${(props) => props.theme['base-label']};
+  }
 
   header {
     display: flex;

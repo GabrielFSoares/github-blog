@@ -32,10 +32,10 @@ export const PublicationsHeaderContent = styled.div`
       text-decoration: none;
       border-bottom: 1px solid transparent;
       height: 1.1875rem;
+      transition: border-bottom 0.4s;
 
       &:hover {
         border-bottom: 1px solid ${(props) => props.theme.blue};
-        transition: border-bottom 0.5s;
       }
     }
   }
