@@ -13,6 +13,7 @@ import {
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
 import { SearchForm } from './components/SearchForm'
+import { PublicationsList } from './components/PublicantionsList'
 
 export function Publications() {
   return (
@@ -52,6 +53,8 @@ export function Publications() {
         </PublicationsHeaderContainer>
 
         <SearchForm />
+
+        <PublicationsList />
       </PublicationsContainer>
     </>
   )
