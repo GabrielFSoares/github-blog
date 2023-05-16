@@ -1,5 +1,4 @@
-import { PublicationsContainer, PublicationsHeaderContent } from './styles'
-import Avatar from '../../assets/avatar.png'
+import { PublicationsHeader, UserInformationContent } from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
@@ -9,29 +8,30 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { SearchForm } from './components/SearchForm'
 import { PublicationsList } from './components/PublicantionsList'
+import { useContext } from 'react'
+import { UserContext } from '../../contexts/UserContext'
 
 export function Publications() {
+  const { avatarUrl, bio, followers, gitUrl, name, login } =
+    useContext(UserContext)
+
   return (
-    <PublicationsContainer>
-      <header>
-        <img src={Avatar} alt="" />
-        <PublicationsHeaderContent>
+    <div>
+      <PublicationsHeader>
+        <img src={avatarUrl} alt="" />
+        <UserInformationContent>
           <header>
-            <h1>Cameron Williamson</h1>
-            <a href="">
+            <h1>{name}</h1>
+            <a href={gitUrl} target="_blank" rel="noreferrer">
               GITHUB
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" />
             </a>
           </header>
-          <p>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-            viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-            volutpat pulvinar vel mass.
-          </p>
+          <p>{bio}</p>
           <footer>
             <div>
               <FontAwesomeIcon icon={faGithub} />
-              <span>cameronwll</span>
+              <span>{login}</span>
             </div>
             <div>
               <FontAwesomeIcon icon={faBuilding} />
@@ -39,14 +39,16 @@ export function Publications() {
             </div>
             <div>
               <FontAwesomeIcon icon={faUserGroup} size="sm" />
-              <span>32 seguidores</span>
+              <span>
+                {followers} {followers === 1 ? 'seguidor' : 'seguidores'}
+              </span>
             </div>
           </footer>
-        </PublicationsHeaderContent>
-      </header>
+        </UserInformationContent>
+      </PublicationsHeader>
 
       <SearchForm />
       <PublicationsList />
-    </PublicationsContainer>
+    </div>
   )
 }
