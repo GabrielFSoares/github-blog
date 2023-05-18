@@ -17,6 +17,7 @@ export const PublicationCard = styled.div`
   border: 2px solid ${(props) => props.theme['base-post']};
   border-radius: 10px;
   padding: 2rem;
+  height: 16.25rem;
 
   display: flex;
   flex-direction: column;

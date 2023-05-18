@@ -28,9 +28,10 @@ export function UserProvider({ children }: UserProviderProps) {
     {} as UserInformationProps,
   )
 
-  const fetchUser = useCallback(async () => {
-    const response = await usersAPI.get('rocketseat-education')
+  const gitName = 'rocketseat-education'
 
+  const fetchUser = useCallback(async () => {
+    const response = await usersAPI.get(gitName)
     const user: UserInformationProps = {
       id: response.data.id,
       avatarUrl: response.data.avatar_url,
