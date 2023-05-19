@@ -12,6 +12,7 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import { Issue, IssuesContext } from '../../contexts/IssuesContext'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import ReactMarkdown from 'react-markdown'
 
 export function Post() {
   const { issues } = useContext(IssuesContext)
@@ -72,7 +73,9 @@ export function Post() {
               </div>
             </footer>
           </PostHeaderContainer>
-          <PostContent>{selectedIssue.content}</PostContent>
+          <PostContent>
+            <ReactMarkdown>{selectedIssue.content}</ReactMarkdown>
+          </PostContent>
         </PostContainer>
       )}
     </>
