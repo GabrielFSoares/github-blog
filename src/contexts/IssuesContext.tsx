@@ -43,7 +43,7 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
         createdAt: data.created_at,
         issueUrl: data.html_url,
         login: data.user.login,
-        comments: data.comments
+        comments: data.comments,
       }
     })
 
