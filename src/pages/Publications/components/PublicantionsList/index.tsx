@@ -8,11 +8,15 @@ import { ptBR } from 'date-fns/locale'
 export function PublicationsList() {
   const { issues } = useContext(IssuesContext)
 
+  function handleSetIdPostInStorage(id: number) {
+    localStorage.setItem('@github-blog:post-id', id.toString())
+  }
+
   return (
     <PublicationsListContainer>
       {issues.map((issue) => {
         return (
-          <Link to="/post" key={issue.id}>
+          <Link to="/post" key={issue.id} onClick={() => handleSetIdPostInStorage(issue.id)}>
             <PublicationCard>
               <header>
                 <h1>{issue.title}</h1>

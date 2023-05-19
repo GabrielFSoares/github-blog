@@ -7,11 +7,14 @@ import {
 } from 'react'
 import { issuesAPI } from '../lib/axios'
 
-interface Issue {
+export interface Issue {
   id: number
   title: string
   content: string
   createdAt: string
+  issueUrl: string
+  login: string
+  comments: number
 }
 
 interface IssuesContextType {
@@ -38,6 +41,9 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
         title: data.title,
         content: data.body,
         createdAt: data.created_at,
+        issueUrl: data.html_url,
+        login: data.user.login,
+        comments: data.comments
       }
     })
 
