@@ -60,5 +60,26 @@ export const PostHeaderContainer = styled.header`
 `
 
 export const PostContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 2.5rem 2rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 1.5rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  pre {
+    background-color: ${(props) => props.theme['base-post']};
+    border-radius: 2px;
+    padding: 1rem;
+  }
 `
