@@ -12,7 +12,7 @@ import { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext'
 
 export function Publications() {
-  const { avatarUrl, bio, followers, gitUrl, name, login } =
+  const { avatarUrl, bio, followers, gitUrl, name, gitName } =
     useContext(UserContext)
 
   return (
@@ -31,7 +31,7 @@ export function Publications() {
           <footer>
             <div>
               <FontAwesomeIcon icon={faGithub} />
-              <span>{login}</span>
+              <span>{gitName}</span>
             </div>
             <div>
               <FontAwesomeIcon icon={faBuilding} />

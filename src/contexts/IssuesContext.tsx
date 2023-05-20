@@ -19,6 +19,8 @@ export interface Issue {
 
 interface IssuesContextType {
   issues: Issue[]
+  repo: string
+  setFilteredIssues: (filteredIssues: Issue[]) => void
 }
 
 interface IssuesProviderProps {
@@ -29,11 +31,11 @@ export const IssuesContext = createContext({} as IssuesContextType)
 
 export function IssuesProvider({ children }: IssuesProviderProps) {
   const [issues, setIssues] = useState<Issue[]>([])
+  const repo = 'reactjs-github-blog-challenge'
+  const gitName = 'rocketseat-education'
 
   const fetchIssues = useCallback(async () => {
-    const response = await issuesAPI.get(
-      'rocketseat-education/reactjs-github-blog-challenge/issues',
-    )
+    const response = await issuesAPI.get(`${gitName}/${repo}/issues`)
 
     const issuesList = response.data.map((data: any) => {
       return {
@@ -54,8 +56,12 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
     fetchIssues()
   }, [fetchIssues])
 
+  function setFilteredIssues(filteredIssues: Issue[]) {
+    setIssues(filteredIssues)
+  }
+
   return (
-    <IssuesContext.Provider value={{ issues }}>
+    <IssuesContext.Provider value={{ issues, setFilteredIssues, repo }}>
       {children}
     </IssuesContext.Provider>
   )

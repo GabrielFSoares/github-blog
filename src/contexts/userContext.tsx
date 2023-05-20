@@ -14,7 +14,7 @@ interface UserInformationProps {
   bio: string
   gitUrl: string
   followers: number
-  login: string
+  gitName: string
 }
 
 interface UserProviderProps {
@@ -39,7 +39,7 @@ export function UserProvider({ children }: UserProviderProps) {
       bio: response.data.bio,
       gitUrl: response.data.html_url,
       followers: response.data.followers,
-      login: response.data.login,
+      gitName,
     }
 
     setUserInfomation(user)
