@@ -77,6 +77,10 @@ export const PostContent = styled.div`
     max-width: 100%;
   }
 
+  a {
+    color: ${(props) => props.theme.blue};
+  }
+
   pre {
     background-color: ${(props) => props.theme['base-post']};
     border-radius: 2px;
